@@ -1,45 +1,52 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Calculator</title>
-    <link rel="stylesheet" href="style.css" />
-    <script src="script.js" defer></script>
-  </head>
-  <body>
-    <header>LOGO</header>
-    <main>
-      <div class="calculator">
-        <div class="display">0</div>
-        <div class="buttons">
-          <button class="button" data-type="number" data-value="7">7</button>
-          <button class="button" data-type="number" data-value="8">8</button>
-          <button class="button" data-type="number" data-value="9">9</button>
-          <button class="button" data-type="number" data-value="4">4</button>
-          <button class="button" data-type="number" data-value="5">5</button>
-          <button class="button" data-type="number" data-value="6">6</button>
-          <button class="button" data-type="number" data-value="1">1</button>
-          <button class="button" data-type="number" data-value="2">2</button>
-          <button class="button" data-type="number" data-value="3">3</button>
-          <button class="button operator" data-type="operator" data-value="/">
-            /
-          </button>
-          <button class="button operator" data-type="operator" data-value="*">
-            *
-          </button>
-          <button class="button operator" data-type="operator" data-value="-">
-            -
-          </button>
-          <button class="button operator" data-type="operator" data-value="+">
-            +
-          </button>
-          <button id="equals" class="button equals">= (equals)</button>
-          <button id="clear" class="button clear">C (clear)</button>
-          <button id="backspace" class="button backspace">⌫</button>
-        </div>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" type="image/png" sizes="32x32" href="./img/favicon-32x32.png">
+  <title>Calculator</title>
+  <link rel="stylesheet" href="style.css" />
+  <script src="script.js" type="module" defer></script>
+</head>
+
+<body>
+  <header>
+    <h2>Kreativstrom Calculator Project</h2>
+  </header>
+
+  <main>
+    <section class="calculator">
+      <div class="display">0</div>
+      <div class="buttons">
+        <button id="clear" class="button others">C</button>
+        <button id="signs" class="button others">+/-</button>
+        <button id="backspace" class="button others">⌫</button>
+        <button class="button operator" data-type="operator" data-value="/">/</button>
+
+        <button class="button" data-type="number" data-value="7">7</button>
+        <button class="button" data-type="number" data-value="8">8</button>
+        <button class="button" data-type="number" data-value="9">9</button>
+        <button class="button operator" data-type="operator" data-value="*">x</button>
+
+        <button class="button" data-type="number" data-value="4">4</button>
+        <button class="button" data-type="number" data-value="5">5</button>
+        <button class="button" data-type="number" data-value="6">6</button>
+        <button class="button operator" data-type="operator" data-value="-">-</button>
+
+        <button class="button" data-type="number" data-value="1">1</button>
+        <button class="button" data-type="number" data-value="2">2</button>
+        <button class="button" data-type="number" data-value="3">3</button>
+        <button class="button operator" data-type="operator" data-value="+">+</button>
+        
+        <button id="zero" class="button" data-type="number" data-value="0">0</button>
+        <button id="comma" class="button comma">.</button>
+        <button id="equals" class="button operator">=</button>
       </div>
-    </main>
-    <footer>KreativGroup</footer>
-  </body>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; KreativGroup: Anastasiia Kutsenko, Deepak Kumar & Sebastian Schoeneberger</p>
+  </footer>
+</body>
 </html>
