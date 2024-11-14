@@ -1,0 +1,154 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto';
+    background-color: #5B5B5B;
+    color: white;
+}
+
+header, footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 5rem;
+    background-color: #FF9F0B;
+    color: black;
+    font-size: 2rem;
+}
+
+main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    padding: 10rem 0;
+}
+
+.calculator {
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+    gap: 1rem;
+    border: solid 1px #000;
+    border-radius: 5px;
+    padding: 10px;
+    width: 25rem;
+    height: 25rem;
+    background-color: black;
+    padding: 1rem;
+}
+
+.display {
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end; 
+    border: solid 1px #000;
+    border-radius: 5px;
+    width: 100%;
+    height: 5rem;
+    text-align: right;
+    background-color: #222222;
+    color: white;
+    font-size: 2rem;
+}
+
+.buttons {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 5px;
+    width: 100%;
+    height: 100%;
+}
+
+.button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #5B5B5B;
+    border: solid 1px #000;
+    border-radius: 5px;
+    cursor: pointer;
+    color: white;
+    font-size: 1.5rem;
+    font-weight: lighter;
+    transition: background-color 0.3s, box-shadow 0.3s;
+}
+
+.button:hover {
+    transform: scale(1.03);
+    box-shadow: 0 0 8px #ffffff;
+}
+
+.operator {
+    background-color: #FF9F0B;
+    font-weight: bold;
+}
+
+.others {
+    background-color: #383838;
+    font-weight: bold;
+}
+
+#zero {
+    grid-column: span 2;
+}
+
+footer {
+    font-size: 1rem;
+}
+
+
+@media (max-width: 768px) {
+    header, footer {
+        font-size: 1.5rem;
+        height: 4rem;
+    }
+
+    main {
+        padding: 5rem 0;
+    }
+
+    .calculator {
+        width: 20rem;
+        height: 20rem;
+        padding: 0.8rem;
+    }
+
+    .display {
+        font-size: 1.6rem;
+        height: 4rem;
+        padding: 0.5rem;
+    }
+
+    .button {
+        font-size: 1.2rem;
+    }
+}
+
+@media (max-width: 480px) {
+    header, footer {
+        font-size: 1rem;
+        height: 3.5rem;
+        text-align: center;
+    }
+
+    main {
+        padding: 3rem 3rem;
+    }
+
+    .calculator {
+        width: 90%;
+        height: auto;
+    }
+
+    .display {
+        font-size: 1.4rem;
+        height: 3.5rem;
+    }
+
+    .button {
+        font-size: 1rem;
+        padding: 0.3rem;
+    }
+}
