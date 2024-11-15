@@ -48,6 +48,12 @@ function backspace() {
     updateDisplay(currentInput || '0');
 }
 
+function toggleSign() {
+    if (!currentInput) return;
+    currentInput = -currentInput;
+    updateDisplay(currentInput);
+}
+
 function eventListeners() {
     document.querySelectorAll('[data-type="number"]').forEach(button => {
         button.addEventListener('click', () => inputNumber(button.dataset.value));
@@ -59,12 +65,13 @@ function eventListeners() {
     document.getElementById('clear').addEventListener('click', clearCalculator);
     document.getElementById('backspace').addEventListener('click', backspace);
     document.getElementById('comma').addEventListener('click', () => inputNumber('.'));
+    document.getElementById('signs').addEventListener('click', toggleSign);
 }
 
 function keyboardSupport() {
     document.addEventListener('keydown', (e) => {
         const key = e.key;
-        
+
         if (key >= '0' && key <= '9') {
             inputNumber(key);
         } else if (['+', '-', '*', '/'].includes(key)) {
