@@ -8,6 +8,7 @@ let operator = null;
 document.addEventListener('DOMContentLoaded', () => {
     clearCalculator();
     eventListeners();
+    keyboardSupport();
 });
 
 function clearCalculator() {
@@ -58,4 +59,25 @@ function eventListeners() {
     document.getElementById('clear').addEventListener('click', clearCalculator);
     document.getElementById('backspace').addEventListener('click', backspace);
     document.getElementById('comma').addEventListener('click', () => inputNumber('.'));
+}
+
+function keyboardSupport() {
+    document.addEventListener('keydown', (e) => {
+        const key = e.key;
+        
+        if (key >= '0' && key <= '9') {
+            inputNumber(key);
+        } else if (['+', '-', '*', '/'].includes(key)) {
+            setOperator(key);
+        } else if (key === 'Enter' || key === '=') {
+            calculate();
+        } else if (key === 'Backspace') {
+            backspace();
+        } else if (key.toLowerCase() === 'c') {
+            clearCalculator();
+        } else if (key === '.') {
+            inputNumber('.');
+        }
+        e.preventDefault();
+    });
 }

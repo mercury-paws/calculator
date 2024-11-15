@@ -1,19 +1,25 @@
-import {add, subtract, multiply, divide } from './mathFunctions.js';
+import { add, subtract, multiply, divide } from './mathFunctions.js';
 
 export default function operate(operator, a, b) {
     a = parseFloat(a);
     b = parseFloat(b);
 
+    let result;
     switch (operator) {
         case '+':
-            return add(a, b);
+            result = add(a, b);
+            break;
         case '-':
-            return subtract(a, b);
+            result = subtract(a, b);
+            break;
         case '*':
-            return multiply(a, b);
+            result = multiply(a, b);
+            break;
         case '/':
-            return divide(a, b);
+            result = divide(a, b);
+            break;
         default:
             return 'Error: Invalid operator';
     }
+    return parseFloat(result.toFixed(4));
 }
