@@ -21,5 +21,5 @@ export default function operate(operator, a, b) {
         default:
             return 'Error: Invalid operator';
     }
-    return parseFloat(result.toFixed(4));
+    return typeof result === 'number' ? parseFloat(result.toFixed(4)) : result;
 }
