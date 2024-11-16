@@ -19,6 +19,7 @@ function clearCalculator() {
 }
 
 function inputNumber(value) {
+    if(value === '0' && currentInput === '0') return;
     if (value === '.' && currentInput.includes('.')) return;
     currentInput += value;
     updateDisplay(currentInput || '0');
