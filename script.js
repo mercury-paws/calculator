@@ -25,14 +25,17 @@ function inputNumber(value) {
 }
 
 function setOperator(newOperator) {
-    if (!currentInput) return;
-    if (previousInput) {
+    if (!currentInput && operator) {
+        operator = newOperator; 
+        return;
+    }
+    if (previousInput && currentInput) {
         currentInput = operate(operator, previousInput, currentInput);
         updateDisplay(currentInput);
     }
-    operator = newOperator;
-    previousInput = currentInput;
-    currentInput = '';
+    operator = newOperator; 
+    previousInput = currentInput; 
+    currentInput = ''; 
 }
 
 function calculate() {
