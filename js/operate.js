@@ -4,6 +4,10 @@ export default function operate(operator, a, b) {
     a = parseFloat(a);
     b = parseFloat(b);
 
+    if (isNaN(a) || isNaN(b)) {
+        return "Error: Invalid input";
+    }
+
     let result;
     switch (operator) {
         case '+':

@@ -26,6 +26,11 @@ function inputNumber(value) {
 }
 
 function setOperator(newOperator) {
+    // if (currentInput === "Error: Div by 0") {
+    //     clearCalculator();
+    //     return;
+    // }
+
     if (!currentInput && operator) {
         operator = newOperator; 
         return;
@@ -40,6 +45,12 @@ function setOperator(newOperator) {
 }
 
 function calculate() {
+
+    // if (currentInput === "Error: Div by 0") {
+    //     clearCalculator();
+    //     return; // Prevent further calculations
+    // }
+
     if (!operator || !currentInput || !previousInput) return;
     currentInput = operate(operator, previousInput, currentInput);
     updateDisplay(currentInput);
